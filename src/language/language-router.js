@@ -89,7 +89,6 @@ languageRouter.post('/guess', jsonBodyParser, async (req, res, next) => {
     isCorrect = false;
   }
   await list.shift();
-
   updateLanguage.head = list.head.value.id;
   await LanguageService.updateWords(req.app.get('db'), list);
   await LanguageService.updateLanguage(

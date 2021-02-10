@@ -59,12 +59,12 @@ class LinkedList {
     this.head = this.head.next;
     let currentNode = this.head;
     let prevNode = this.head;
-    while (currentNode && i < oldHead.value.memory_value) {
+    while (currentNode.next && i < oldHead.value.memory_value) {
       prevNode = currentNode;
       currentNode = currentNode.next;
       i++;
     }
-    if (!currentNode) {
+    if (!currentNode.next) {
       currentNode.next = oldHead;
       currentNode.value.next = oldHead.value.id;
       oldHead.value.next = null;

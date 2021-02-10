@@ -23,7 +23,7 @@ INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
   (1, 1, 'apprendre', 'learn', 2),
   (2, 1, 'ordinateur', 'computer', 3),
-  (3, 1, 'family', 'famille', 4),
+  (3, 1, 'famille', 'family', 4),
   (4, 1, 'dormir', 'sleep', 5),
   (5, 1, 'essayer', 'try', 6),
   (6, 1, 'améliorer', 'improve', 7),
