@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const AuthService = require('../auth/auth-service');
 const UserService = require('./user-service');
 
 const userRouter = express.Router();
@@ -39,10 +40,14 @@ userRouter.post('/', jsonBodyParser, async (req, res, next) => {
 
     await UserService.populateUserWords(req.app.get('db'), user.id);
 
-    res
-      .status(201)
-      .location(path.posix.join(req.originalUrl, `/${user.id}`))
-      .json(UserService.serializeUser(user));
+    const sub = user.username;
+    const payload = {
+      user_id: user.id,
+      name: user.name
+    };
+    res.send({
+      authToken: AuthService.createJwt(sub, payload)
+    });
   } catch (error) {
     next(error);
   }
