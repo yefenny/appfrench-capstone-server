@@ -308,9 +308,8 @@ API Documentation details:
 // res.body
 
 {
-    "id": 1,
-    "name": "name",
-    "username": "username"
+    authToken: 'asKNNJhkjnnfsdnfkjneasKNNJhkjnnfsdnfkjneasKNNJhkjnnfsdnfkjneasKNNJhkjnnfsdnfkjneasKNNJhkjnnfsdnfkjne'
+
 }
 
 ```
